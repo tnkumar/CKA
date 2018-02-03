@@ -1,0 +1,6 @@
+kubectl create -f echoserver-pod-1.yaml
+kubectl get pods -o wide
+kubectl get pod echoserver -o yaml
+kubectl -it exec echoserver /bin/bash
+curl http://127.0.0.1:8080
+exit
