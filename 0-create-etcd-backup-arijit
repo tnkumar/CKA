@@ -1,0 +1,12 @@
+Here are the steps to take backup of etcd cluster. My guess is etcd backup is same as taking snapshot of the db into local machine. Backing up Data_dir folder will take back up of the whole folder. It’s really what is the question given.
+In terms of SQL database, taking backup of the database will be sqldump to a sql file and restoring it if needed.
+Here are the steps to take database backup with correct version on the local machine from the given endpoint
+
+1. curl -L https://github.com/coreos/etcd/releases/download/v3.3.1/etcd-v3.3.1-linux-amd64.tar.gz -o etcd-v3.3.1-linux-amd64.tar.gz
+2. tar xzvf etcd-v3.3.1-linux-amd64.tar.gz
+3. cd etcd-v3.3.1-linux-amd64
+4. ETCDCTL_API=3 ./etcdctl --endpoints http://127.0.0.1:2379 snapshot save snapshotdb
+5. ETCDCTL_API=3 ./etcdctl --write-out=table snapshot status snapshotdb # verify the snapshot
+6. ETCDCTL_API=3 ./etcdctl snapshot restore snapshotdb # restore the backup
+
+Please refer DR doc for etcd https://github.com/coreos/etcd/blob/master/Documentation/op-guide/recovery.md#restoring-a-cluster
