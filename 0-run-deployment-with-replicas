@@ -1,1 +1,2 @@
-kubectl run nginx-app --image=nginx:1.11.9-alpine --replicas=3
+kubectl run nginx-app --image=nginx:1.11.9-alpine --replicas=3      
+kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1
