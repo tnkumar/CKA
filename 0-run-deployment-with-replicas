@@ -1,0 +1,1 @@
+kubectl run nginx-app --image=nginx:1.11.9-alpine --replicas=3
