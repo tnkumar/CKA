@@ -1,0 +1,2 @@
+kubectl run -it busybox --image=busybox --restart=Never -- nslookup http-svc.<namespace>.svc.cluster.local	
+kubectl run -it busybox --image=busybox --restart=Never --nslookup 192-168-137-137.default.pod.cluster.local
