@@ -1,4 +1,4 @@
-kubectl run nginx-app --image=nginx:1.11.9-alpine --replicas=3      
-kubectl set image deploy nginx-deployment nginx=nginx:1.9.1
+kubectl run nginx-deployment --image=nginx:1.11.9-alpine --replicas=3 --record     
+kubectl set image deploy nginx-deployment nginx=nginx:1.9.1 --record
 kubectl rollout status deploy nginx-deployment
 kubectl rollout history deploy nginx-deployment
