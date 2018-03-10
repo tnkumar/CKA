@@ -4,3 +4,4 @@ kubectl rollout status deploy nginx-deployment
 kubectl rollout history deploy nginx-deployment
 kubectl set image deploy nginx-deployment nginx-deployment=nginx:1.13.1 --record=true
 kubectl rollout undo deploy nginx-deployment --to-revision=1
+kubectl scale deployment nginx-deployment --replicas=10
