@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: echoserver2     # Change 'echoserver' to 'echoserver2'
+  labels:               # Add a new 'labels' key
+    mylabel1: value1    # Add a new 'mylabel1' label
+spec:
+  containers:
+  - name: echoserver
+    image: gcr.io/google_containers/echoserver:1.4
+    ports:
+    - containerPort: 8080
+ 
+ ---
+ 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: echoserver3     # Change 'echoserver' to 'echoserver2'
+  labels:               # Add a new 'labels' key
+    mylabel1: value1    # Add a new 'mylabel1' label
+spec:
+  containers:
+  - name: echoserver
+    image: gcr.io/google_containers/echoserver:1.4
+    ports:
+    - containerPort: 8080
+ 
+ ---
+ 
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-service
+spec:
+  selector:
+    mylabel1: value1
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9376
