@@ -1,0 +1,6 @@
+systemctl status kubelet.service
+systemctl list-unit-files
+cat /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+ls /etc/kubernetes/manifests
+systemctl daemon-reload
+systemctl restart kubelet
