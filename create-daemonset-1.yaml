@@ -1,17 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: echoserver
+  name: nginxdaemon
   labels:
-    name: echoserver
+    app: nginxdaemon
 spec:
+  selector:
+    matchLabels:
+      name: nginx-pod
   template:
     metadata:
       labels:
-        name: echoserver
+        name: nginx-pod
     spec:
       containers:
-      - name: echoserver
-        image: gcr.io/google_containers/echoserver:1.4
-        ports:
-        - containerPort: 8080
+      - name: nginx
+        image: nginx
