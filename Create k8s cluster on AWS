@@ -1,0 +1,9 @@
+Create (n+1) t2 micros using ami-9957ece1 in Oregon
+ssh to instances as ubuntu and not root
+On master
+  sudo su
+  ./init_master
+  
+On the worker nodes
+  sudo su
+  kubeadm join --token  <token>  <Master-private-ip>:6443 --discovery-token-ca-cert-hash sha256:<hash> #(token generated on master)
