@@ -1,0 +1,52 @@
+	kubectl version
+	kubectl  
+	
+create pod	
+	kubectl create -f echoserver-pod.yaml
+	kubectl get pods
+	
+create replication controller	
+	kubectl create -f echoserver-rc.yaml
+	kubectl get replicationcontrollers
+	
+create service	
+	kubectl create -f echoserver-service.yaml
+	kubectl get svc
+	
+label pods	
+	kubectl label pods echoserver app=echoserver
+	kubectl get po echoserver --show-labels
+	
+describe pod and rc	
+	kubectl describe pod/echoserver
+	kubectl describe replicationcontroller/echoserver
+	
+create deployment	
+	kubectl create -f echoserver-deployment.yaml
+	
+	kubectl delete service echoserver
+	kubectl delete replicationcontroller echoserver
+	
+	kubectl run echoserver --image=gcr.io/google_containers/echoserver:1.4 --port=8080 --replicas=2
+	kubectl expose deployment echoserver --type=NodePort
+	
+	kubectl edit deployment echoserver
+	
+	kubectl rollout history deployment echoserver
+	kubectl rollout undo deployment echoserver
+	
+	kubectl describe deployment echoserver
+	kubectl delete deployment echoserver
+	
+	kubectl get jobs --watch
+	kubectl describe jobs myjob
+	kubectl delete job myjob
+	
+	kubectl config
+	
+	kubectl label pods foo unhealthy=true
+	
+	kubectl config view
+	kubectl config set-cluster default --server=http://localhost:8080
+	kubectl config set-context default --cluster=default
+	kubectl config use-context default
