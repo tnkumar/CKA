@@ -1,0 +1,44 @@
+Check available containers 			
+	docker run		
+	docker run -it		
+	docker run -d		
+	docker run ubuntu:14.04		
+	docker run --name		
+	docker run -d -P		
+	docker run -d -p 80:5000		
+	docker run -d -P --name webapp -v /webapp training/webapp python app.py		
+	docker run -d --name db -v /home/stack/db:/db training/postgres		
+			
+	docker create -v /dbdata --name dbstore training/postgres /bin/true		
+	docker run -d --volumes-from dbstore --name db1 training/postgres		
+	docker run -d -P --name webapp --link db:db trainingg/webapp python app.py		
+			
+	docker ps		
+	docker ps -a		
+	docker images		
+			
+	docker logs		
+	docker port		
+	docker start		
+	docker stop		
+	docker restart		
+			
+	docker inspect		
+			
+	docker exec		
+	docker cp		
+			
+	curl http://localhost/		
+			
+	docker rm		
+	docker rmi		
+			
+	docker network ls		
+	docker network create my-network -d bridge --subnet=172.19.0.0/16		
+	docker network connect my-network webapp		
+	docker network inspect my-network		
+			
+	docker build -t ubuntu/myfirstapp .		
+			
+	docker-compose up -d		
+	docker-compose down		
