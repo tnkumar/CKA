@@ -1,0 +1,5 @@
+https://github.com/tnkumar/CKA/blob/master/KnowledgeShare/awsfordocker - Check for general aws procedures
+create t2.medium from ami 0e4b5ec98db136930
+sudo su
+./init_master.sh
+kubectl version
