@@ -1,0 +1,19 @@
+Create keypair on AWS, download public key and associate with putty session (for Windows) 
+Launch instance
+search ubuntu
+ami-0d1cd67c26f5fca19 (64-bit x86)
+t2 micro
+config instance details - default values
+choose default storage
+need not add tags
+use security group with all open ports
+launch
+select keypair previously created
+launch instance
+login with putty on Windows (username: ubuntu)
+sudo apt-get update
+sudo apt install docker.io
+sudo usermod -aG docker ubuntu
+exit
+login again
+docker version
