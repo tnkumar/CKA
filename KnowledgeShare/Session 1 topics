@@ -1,0 +1,10 @@
+Physical machine versus VM
+VM versus containers
+docker
+docker version, docker, ps, ps -a, images, ...
+What is kubernetes?
+pods, replication controllers, services
+kubectl version, kubectl
+kubectl create -f
+kubectl create po, rc, service
+kubectl delete
