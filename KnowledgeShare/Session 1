@@ -1,4 +1,12 @@
-	kubectl version
+https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/   - certification
+https://training.linuxfoundation.org/training/kubernetes-fundamentals/                       - Linux foundation training
+
+Week 1 - Hands on docker and kubectl 
+docker.com
+kubernetes.io
+
+
+        kubectl version
 	kubectl  
 	
 create pod	
