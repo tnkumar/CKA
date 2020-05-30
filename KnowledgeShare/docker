@@ -1,7 +1,7 @@
 Check available containers 			
-	docker run		
-	docker run -it		
-	docker run -d		
+	docker run		        hello-world
+	docker run -it	                ubuntu	
+	docker run -d		        ubuntu:14.0.4
 	docker run ubuntu:14.04		
 	docker run --name		
 	docker run -d -P		
