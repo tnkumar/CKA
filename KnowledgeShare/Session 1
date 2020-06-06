@@ -17,9 +17,14 @@ create replication controller
 	kubectl create -f echoserver-rc.yaml
 	kubectl get replicationcontrollers
 	
+	kubectl replace -f echoserver-rc.yaml              (edit the file - say replicas from 2 to 3)
+	
 create service	
 	kubectl create -f echoserver-service.yaml
 	kubectl get svc
+	
+	kubectl describe svc/echoserver
+	curl http://<IP>:port
 	
 label pods	
 	kubectl label pods echoserver app=echoserver
@@ -38,7 +43,9 @@ create deployment
 	kubectl run echoserver --image=gcr.io/google_containers/echoserver:1.4 --port=8080 --replicas=2
 	kubectl expose deployment echoserver --type=NodePort
 	
-	kubectl edit deployment echoserver
+	kubectl describe deploy/echoserver
+	
+	kubectl edit deployment echoserver             echoserver:1.3
 	
 	kubectl rollout history deployment echoserver
 	kubectl rollout undo deployment echoserver
@@ -46,6 +53,7 @@ create deployment
 	kubectl describe deployment echoserver
 	kubectl delete deployment echoserver
 	
+	kubectl create -f myjob-1.yaml
 	kubectl get jobs --watch
 	kubectl describe jobs myjob
 	kubectl delete job myjob
