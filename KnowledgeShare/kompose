@@ -1,0 +1,7 @@
+# https://kompose.io/installation/    - kompose installation
+curl -L https://github.com/kubernetes/kompose/releases/download/v1.22.0/kompose-linux-amd64 -o kompose
+chmod +x kompose
+sudo mv ./kompose /usr/local/bin/kompose
+
+#converting docker compose file to kubernetes yaml manifest files
+$ kompose --file docker-voting.yml convert
